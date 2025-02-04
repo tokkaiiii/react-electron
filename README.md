@@ -1,51 +1,34 @@
-# React + TypeScript + Vite
+# React Query Chatbot with LangChain & FastAPI
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+## 프로젝트 소개
 
-Currently, two official plugins are available:
+React Query Chatbot은 Electron, React, FastAPI, 그리고 LangChain을 활용한 데스크톱 챗봇 애플리케이션입니다. SSE(Server-Sent Events)를 통한 실시간 스트리밍 응답을 지원합니다.
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react/README.md) uses [Babel](https://babeljs.io/) for Fast Refresh
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react-swc) uses [SWC](https://swc.rs/) for Fast Refresh
+![React Query Chatbot Demo](./assets/demo.gif)
 
-## Expanding the ESLint configuration
+## 기술 스택
 
-If you are developing a production application, we recommend updating the configuration to enable type aware lint rules:
+### Frontend
+- Vite
+- React
+- TypeScript
+- Electron
+- Styled Components
+- Server-Sent Events (SSE)
 
-- Configure the top-level `parserOptions` property like this:
+### Backend
+- FastAPI
+- LangChain
+- Python
 
-```js
-export default tseslint.config({
-  languageOptions: {
-    // other options...
-    parserOptions: {
-      project: ['./tsconfig.node.json', './tsconfig.app.json'],
-      tsconfigRootDir: import.meta.dirname,
-    },
-  },
-})
-```
+## 주요 기능
+- 실시간 AI 응답 스트리밍
+- 데스크톱 네이티브 애플리케이션
+- 직관적인 채팅 인터페이스
+- 응답 생성 중 로딩 표시
 
-- Replace `tseslint.configs.recommended` to `tseslint.configs.recommendedTypeChecked` or `tseslint.configs.strictTypeChecked`
-- Optionally add `...tseslint.configs.stylisticTypeChecked`
-- Install [eslint-plugin-react](https://github.com/jsx-eslint/eslint-plugin-react) and update the config:
 
-```js
-// eslint.config.js
-import react from 'eslint-plugin-react'
-
-export default tseslint.config({
-  // Set the react version
-  settings: { react: { version: '18.3' } },
-  plugins: {
-    // Add the react plugin
-    react,
-  },
-  rules: {
-    // other rules...
-    // Enable its recommended rules
-    ...react.configs.recommended.rules,
-    ...react.configs['jsx-runtime'].rules,
-  },
-})
-```
-# react-electron
+## 개발 가이드라인
+### 코드 스타일
+- TypeScript strict 모드 사용
+- 함수형 컴포넌트 사용
