@@ -3,11 +3,19 @@
   "private": true,
   "version": "0.0.0",
   "type": "commonjs",
-  "main": "dist/main.js",
+  "main": "./dist/main.js",
   "homepage": "./",
+  "description": "Your application description",
+  "author": {
+    "name": "Your Name",
+    "email": "your.email@example.com"
+  },
   "scripts": {
     "dev": "tsc -w & vite",
     "build": "tsc && vite build",
+    "build:electron": "tsc && vite build && tsc --project tsconfig.electron.json",
+    "electron:package": "npm run build:electron && electron-builder",
+    "app:dist": "npm run build:electron && npm run electron:package",
     "lint": "eslint .",
     "preview": "vite preview",
     "start": "concurrently \"npm run dev\" \"wait-on http://localhost:5173 && electron .\""
@@ -42,5 +50,25 @@
     "typescript-eslint": "^8.18.2",
     "vite": "^6.0.11",
     "wait-on": "^8.0.2"
+  },
+  "build": {
+    "appId": "com.your-app-name",
+    "productName": "Your App Name",
+    "directories": {
+      "output": "release"
+    },
+    "files": [
+      "dist/**/*",
+      "package.json"
+    ],
+    "mac": {
+      "target": ["dmg"]
+    },
+    "win": {
+      "target": ["nsis"]
+    },
+    "linux": {
+      "target": ["AppImage"]
+    }
   }
 }
