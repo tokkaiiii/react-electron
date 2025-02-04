@@ -26,7 +26,7 @@ export function ChatPage() {
 
     setMessages(prev => [...prev, userMessage]);
     setIsLoading(true);
-    currentMessageRef.current = '';ㄴ
+    currentMessageRef.current = '';
 
     try {
       const response = await fetch('http://localhost:8000/api/chat', {
