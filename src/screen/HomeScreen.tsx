@@ -6,6 +6,7 @@ const HomeScreen = () => {
       <h1>HomeScreen</h1>
       <button onClick={() => alert('Hello World')}>Click me</button>
       <Link to="/about">About</Link>
+      <Link to="/chat">Chat</Link>
     </div>
   );
 };
