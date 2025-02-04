@@ -1,6 +1,6 @@
 import { app, BrowserWindow } from "electron";
 import * as path from "path";
-const isDev = true;
+const isDev = false;
 let mainWindow: BrowserWindow | null = null;
 const BASE_URL = "http://localhost:5173";
 
@@ -18,13 +18,10 @@ const createWindow = async () => {
   });
 
   if (isDev) {
-    console.log("isDev", isDev);
     mainWindow.loadURL(BASE_URL);
     mainWindow.webContents.openDevTools({ mode: "detach" });
 } else {
-      console.log("isDev", isDev);
-    console.log("isProd", process.env.NODE_ENV);
-    mainWindow.loadFile(path.join(__dirname, "../index.html"));
+    mainWindow.loadFile(path.join(__dirname, "../dist/index.html"));
   }
 };
 

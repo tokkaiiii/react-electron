@@ -11,7 +11,7 @@
     "email": "your.email@example.com"
   },
   "scripts": {
-    "dev": "tsc -w & vite",
+    "dev": "tsc & vite",
     "build": "tsc && vite build",
     "build:electron": "tsc && vite build && tsc --project tsconfig.electron.json",
     "electron:package": "npm run build:electron && electron-builder",
